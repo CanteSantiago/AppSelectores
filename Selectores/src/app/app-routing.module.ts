@@ -5,7 +5,7 @@ const routes: Routes = [
 
   {
     path: 'selector',
-    //loadChildren: () => import('./countries/countries.module').then( m => m.CountriesModule ),
+    loadChildren: () => import('./country/countries.module').then( m => m.CountriesModule ),
   },
   {
     path: '**',
