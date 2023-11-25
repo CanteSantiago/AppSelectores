@@ -37,10 +37,11 @@ this.onRegionChanged();
   onRegionChanged(): void {
     this.myForm.get('region')!.valueChanges
       .pipe(
+        tap( () => this.myForm.get('country')!.setValue('') ),
         switchMap( (region) => this.countriesService.getCountriesByRegion(region) ),
       )
       .subscribe( countries => {
-     this.countriesByRegion= countries;
+        this.countriesByRegion = countries;
       });
   }
 
